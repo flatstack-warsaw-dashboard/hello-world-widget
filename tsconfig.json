@@ -15,7 +15,6 @@
     "esModuleInterop": false,
     "skipLibCheck": true,
     "strict": true,
-    "isolatedModules": true,
     "lib": ["dom", "dom.iterable", "esnext"]
   },
   "include": ["./src/**/*"]
