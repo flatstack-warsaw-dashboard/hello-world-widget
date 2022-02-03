@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   context: new URL('./src', import.meta.url).pathname,
-  entry: './index.tsx',
+  entry: './index.ts',
   mode: 'development',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],

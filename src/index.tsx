@@ -1,9 +1,25 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import HelloWorldWidget from './HelloWorldWidget';
+import HelloWorldWidgetComponent from './HelloWorldWidget';
 
-function render(target: Element) {
-  ReactDOM.render(<HelloWorldWidget />, target);
+class HelloWorldWidget extends HTMLElement {
+  static get observedAttributes() {
+    return ['name'];
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+
+  attributeChangedCallback() {
+    this.render();
+  }
+
+  render() {
+    const name = this.getAttribute('name');
+
+    ReactDOM.render(<HelloWorldWidgetComponent name={name} />, this);
+  }
 }
 
-export default render;
+window.customElements.define('fwd-hello-world-widget', HelloWorldWidget);
