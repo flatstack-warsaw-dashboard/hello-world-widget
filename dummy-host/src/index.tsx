@@ -1,11 +1,9 @@
-import * as React from 'react';
-import { render } from 'react-dom';
+async function init() {
+  const { default: renderHelloWorldWidget } = await import(
+    'widgets/HelloWorldWidget'
+  );
 
-const HelloWorldWidget = React.lazy(() => import('widgets/HelloWorldWidget'));
+  renderHelloWorldWidget(document.getElementById('root'));
+}
 
-render(
-  <React.Suspense fallback="Loading">
-    <HelloWorldWidget />
-  </React.Suspense>,
-  document.getElementById('root'),
-);
+init();

@@ -29,6 +29,7 @@ export default {
   plugins: [
     new webpack.container.ModuleFederationPlugin({
       name: 'widgets',
+      filename: 'remote.js',
       exposes: { './HelloWorldWidget': './index.tsx' },
     }),
     new StatsWriterPlugin({
