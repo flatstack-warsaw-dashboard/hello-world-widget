@@ -2,19 +2,18 @@ const widgetsHosts = {
   helloWorldWidget: 'http://localhost:3301',
 };
 
-export async function setWidgetsRemotes() {
-  window.WIDGETS_REMOTES = Object.fromEntries(
-    await Promise.all(
-      Object.entries(widgetsHosts).map(async ([widgetName, widgetHost]) => [
-        widgetName,
-        `${widgetHost}/${
-          (
-            await (await fetch(`${widgetHost}/manifest.json`)).json()
-          ).main
-        }`,
-      ]),
-    ),
-  );
+export async function loadHelloWorldWidget() {
+  // you should NOT fetch manifest.json in real-world production application from browser.
+  // It should be done on server side.
+  const scriptUrl = `${widgetsHosts.helloWorldWidget}/${
+    (
+      await (
+        await fetch(`${widgetsHosts.helloWorldWidget}/manifest.json`)
+      ).json()
+    ).main
+  }`;
+
+  await injectScript(scriptUrl);
 }
 
 export function injectScript(url) {
@@ -28,13 +27,4 @@ export function injectScript(url) {
     };
     document.head.appendChild(element);
   });
-}
-
-export async function loadFederatedModule(scope, module) {
-  await __webpack_init_sharing__('default');
-  const container = window[scope];
-  await container.init(__webpack_share_scopes__.default);
-  const factory = await window[scope].get(module);
-  const Module = factory();
-  return Module;
 }

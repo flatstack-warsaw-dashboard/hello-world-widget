@@ -1,6 +1,6 @@
 # Hello World Widget
 
-This repo provides an example of micro-frontend application implemented with Webpack Module Federation.
+This repo provides an example of micro-frontend application.
 
 ## Structure
 

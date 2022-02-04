@@ -1,14 +1,11 @@
 import { URL } from 'node:url';
-import webpack from 'webpack';
 import { StatsWriterPlugin } from 'webpack-stats-plugin';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-const name = 'helloWorldWidget';
-
 export default {
   context: new URL('./src', import.meta.url).pathname,
-  entry: {},
+  entry: { main: './index.tsx' },
   mode: NODE_ENV,
   output: {
     filename: '[name].[contenthash].js',
@@ -29,15 +26,11 @@ export default {
     ],
   },
   plugins: [
-    new webpack.container.ModuleFederationPlugin({
-      name,
-      exposes: { '.': './index.tsx' },
-    }),
     new StatsWriterPlugin({
       filename: 'manifest.json',
       transform(data) {
         return JSON.stringify({
-          main: data.assetsByChunkName[name][0],
+          main: data.assetsByChunkName.main[0],
         });
       },
     }),

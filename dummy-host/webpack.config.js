@@ -1,5 +1,4 @@
 import { URL } from 'node:url';
-import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
@@ -16,13 +15,6 @@ export default {
     ],
   },
   plugins: [
-    new webpack.container.ModuleFederationPlugin({
-      name: 'dummyHost',
-      remotes: {
-        'hello-world-widget':
-          'helloWorldWidget@http://localhost:3301/remote.js',
-      },
-    }),
     new HtmlWebpackPlugin({
       template: 'index.html',
     }),
