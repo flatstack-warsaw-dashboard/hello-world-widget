@@ -20,9 +20,10 @@ export default {
   },
   plugins: [
     new webpack.container.ModuleFederationPlugin({
-      name: 'dummy-host',
+      name: 'dummyHost',
       remotes: {
-        widgets: 'widgets@http://localhost:3301/remote.js',
+        'hello-world-widget':
+          'helloWorldWidget@http://localhost:3301/remote.js',
       },
     }),
     new HtmlWebpackPlugin({

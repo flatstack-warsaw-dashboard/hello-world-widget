@@ -1,5 +1,5 @@
 async function init() {
-  await import('widgets/HelloWorldWidget');
+  await import('hello-world-widget');
 
   document.getElementById('root')!.innerHTML =
     '<fwd-hello-world-widget name="Kek"></fwd-hello-world-widget>';

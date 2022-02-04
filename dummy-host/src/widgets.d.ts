@@ -1,1 +1,1 @@
-declare module 'widgets/*';
+declare module 'hello-world-widget';
