@@ -4,6 +4,8 @@ import { StatsWriterPlugin } from 'webpack-stats-plugin';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
+const name = 'helloWorldWidget';
+
 export default {
   context: new URL('./src', import.meta.url).pathname,
   entry: {},
@@ -28,12 +30,16 @@ export default {
   },
   plugins: [
     new webpack.container.ModuleFederationPlugin({
-      name: 'helloWorldWidget',
-      filename: 'remote.js',
+      name,
       exposes: { '.': './index.tsx' },
     }),
     new StatsWriterPlugin({
-      filename: 'stats.json',
+      filename: 'manifest.json',
+      transform(data) {
+        return JSON.stringify({
+          main: data.assetsByChunkName[name][0],
+        });
+      },
     }),
   ],
   devServer: {

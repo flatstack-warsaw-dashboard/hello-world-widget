@@ -4,15 +4,12 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   context: new URL('./src', import.meta.url).pathname,
-  entry: './index.ts',
+  entry: './index.js',
   mode: 'development',
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
-  },
   module: {
     rules: [
       {
-        test: /\.(tsx?|jsx?)$/,
+        test: /\.jsx?$/,
         use: 'babel-loader',
         exclude: /\/node_modules\//,
       },
