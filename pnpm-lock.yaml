@@ -29,7 +29,6 @@ specifiers:
   webpack: ^5.67.0
   webpack-cli: ^4.9.2
   webpack-dev-server: ^4.7.3
-  webpack-stats-plugin: ^1.0.3
 
 dependencies:
   core-js: 3.20.3
@@ -62,7 +61,6 @@ devDependencies:
   webpack: 5.67.0_webpack-cli@4.9.2
   webpack-cli: 4.9.2_4df292f2573ba77e77217391b9684f0a
   webpack-dev-server: 4.7.3_e9a6b0c876bb47b7070003eedf8fe3a2
-  webpack-stats-plugin: 1.0.3
 
 packages:
 
@@ -5261,10 +5259,6 @@ packages:
   /webpack-sources/3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
-    dev: true
-
-  /webpack-stats-plugin/1.0.3:
-    resolution: {integrity: sha512-tV/SQHl6lKfBahJcNDmz8JG1rpWPB9NEDQSMIoL74oVAotdxYljpgIsgLzgc1N9QrtA9KEA0moJVwQtNZv2aDA==}
     dev: true
 
   /webpack/5.67.0_webpack-cli@4.9.2:

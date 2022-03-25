@@ -1,5 +1,4 @@
 import { URL } from 'node:url';
-import { StatsWriterPlugin } from 'webpack-stats-plugin';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -8,7 +7,8 @@ export default {
   entry: { main: './index.tsx' },
   mode: NODE_ENV,
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].js',
+    chunkFilename: '[id].[contenthash].js',
     path: new URL('./dist', import.meta.url).pathname,
     clean: true,
     publicPath: 'auto',
@@ -25,16 +25,6 @@ export default {
       },
     ],
   },
-  plugins: [
-    new StatsWriterPlugin({
-      filename: 'manifest.json',
-      transform(data) {
-        return JSON.stringify({
-          main: data.assetsByChunkName.main[0],
-        });
-      },
-    }),
-  ],
   devServer: {
     port: 3301,
     headers: {

@@ -3,7 +3,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   context: new URL('./src', import.meta.url).pathname,
-  entry: './index.js',
+  entry: {},
   mode: 'development',
   module: {
     rules: [
