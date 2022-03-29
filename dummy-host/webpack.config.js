@@ -9,8 +9,6 @@ const packageJson = JSON.parse(
   }),
 );
 
-console.log(packageJson);
-
 const deps = packageJson.dependencies;
 
 export default {
