@@ -1,5 +1,5 @@
 "use strict";(globalThis.webpackChunk=globalThis.webpackChunk||[]).push([[365],{365:(e,t,a)=>{a.r(t),a(373);var r=a(342),n=a(914),s=a.n(n),i=a(592);const d=s().div`
-  padding: 1em;
+  padding: 4em;
   height: 100%;
   width: 100%;
   background: linear-gradient(
@@ -19,12 +19,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-`,l=s().span`
+`,g=s().span`
   font-size: 2.5em;
   font-weight: bold;
   text-align: center;
-`,g=({name:e})=>(0,i.jsx)(d,{children:(0,i.jsxs)(l,{children:["Hello ",e||"world"]})}),b=n.createGlobalStyle`
+`,l=({name:e})=>(0,i.jsx)(d,{children:(0,i.jsxs)(g,{children:["Your ",e||"widget"," could be here 😉"]})}),b=n.createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-`;class h extends HTMLElement{shadow=this.attachShadow({mode:"open"});static get observedAttributes(){return["name"]}connectedCallback(){this.render()}attributeChangedCallback(){this.render()}render(){const e=this.getAttribute("name");r.render((0,i.jsx)(n.StyleSheetManager,{target:this.shadow,children:(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(b,{}),(0,i.jsx)(g,{name:e})]})}),this.shadow)}}window.customElements.define("fwd-hello-world-widget",h)}}]);
+`;class h extends HTMLElement{shadow=this.attachShadow({mode:"open"});static get observedAttributes(){return["name"]}connectedCallback(){this.render()}attributeChangedCallback(){this.render()}render(){const e=this.getAttribute("name");r.render((0,i.jsx)(n.StyleSheetManager,{target:this.shadow,children:(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(b,{}),(0,i.jsx)(l,{name:e})]})}),this.shadow)}}window.customElements.define("fwd-hello-world-widget",h)}}]);
