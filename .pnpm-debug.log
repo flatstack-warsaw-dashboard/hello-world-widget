@@ -1,0 +1,26 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 warn pnpm": {
+    "message": "Unsupported engine: wanted: {\"node\":\">=16.13.2\"} (current: {\"node\":\"v16.13.0\",\"pnpm\":\"6.28.0\"})",
+    "prefix": "/Users/kamil/Documents/work/fs/dashboard/hello-world-widget"
+  },
+  "2 error pnpm": {
+    "code": "ELIFECYCLE",
+    "errno": "ENOENT",
+    "syscall": "spawn",
+    "file": "sh",
+    "pkgid": "hello-world-widget@1.0.0",
+    "stage": "dev",
+    "script": "run-p dev:widget dev:dummy-host",
+    "pkgname": "hello-world-widget",
+    "err": {
+      "name": "pnpm",
+      "message": "hello-world-widget@1.0.0 dev: `run-p dev:widget dev:dummy-host`\nspawn ENOENT",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: hello-world-widget@1.0.0 dev: `run-p dev:widget dev:dummy-host`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/Users/kamil/.node/corepack/pnpm/6.28.0/dist/pnpm.cjs:91976:22)\n    at ChildProcess.emit (node:events:390:28)\n    at maybeClose (node:internal/child_process:1064:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:301:5)"
+    }
+  },
+  "3 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+}

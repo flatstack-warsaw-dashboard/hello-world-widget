@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Wrapper = styled.div`
-  padding: 1em;
+  padding: 4em;
   height: 100%;
   width: 100%;
   background: linear-gradient(
@@ -36,7 +36,7 @@ const Text = styled.span`
 const HelloWorldWidget = ({ name }: Props) => {
   return (
     <Wrapper>
-      <Text>Hello {name || 'world'}</Text>
+      <Text>Your {name || 'widget'} could be here 😉</Text>
     </Wrapper>
   );
 };
